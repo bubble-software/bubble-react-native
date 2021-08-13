@@ -9,18 +9,18 @@ import { styles } from './style'
 export const TableCell: TemplateType = ({ item, nav }) => {
   const { title, username, dateCreated, votes, content, prevVote, isVoted, id, comments } = item
   const navigate = () => { nav(item) }
-	console.log(item)
+  console.log(item)
   return (
 		<TouchableOpacity
 			style={styles.tableCellContainer}
 			onPress={ navigate }
 		>
-		
+
 			<View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
 				<Text style={{ color: 'gray', left: 0, position: 'absolute' }}>{truncateString(username, 8)}</Text>
 				<Text style={{ color: 'rgb(40, 137, 161)', fontSize: 18, textAlign: 'center' }}>{truncateString(title, 15)}</Text>
 			</View>
-			
+
 			<View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', marginTop: -15 }}>
 				<Text numberOfLines={1} style={{ color: 'rgb(100, 195, 220)', width: '80%' }}>{content}</Text>
 				<Vote

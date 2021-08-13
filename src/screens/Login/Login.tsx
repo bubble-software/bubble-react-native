@@ -9,6 +9,7 @@ import { setAsyncStorageItem } from '../../utils/asyncStorage'
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider'
 import { login } from './service'
 import BubbleText from '../../../assets/icons/bubbleText.svg'
+
 export const Login = (): JSX.Element => {
   const navigation = useNavigation()
   const [username, setUsername] = useState('')
@@ -39,7 +40,7 @@ export const Login = (): JSX.Element => {
 		<ScreenContainer>
 			<KeyboardAvoidingView
 				keyboardVerticalOffset={0}
-				style={{flex:1}}
+				style={{ flex: 1 }}
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 				<View style={{ flex: 1, marginVertical: '25%', marginHorizontal: '8%' }}>

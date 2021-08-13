@@ -26,16 +26,16 @@ export const HappyHour = (): JSX.Element => {
 
       getRadius({ longitude, latitude })
         .then((resp) => {
-          getCategoryPosts({ 
-            token: credentials, 
-            longitude, 
-            latitude, 
-            radius: resp.radius, 
-            category: 'Happy Hour' 
+          getCategoryPosts({
+            token: credentials,
+            longitude,
+            latitude,
+            radius: resp.radius,
+            category: 'Happy Hour',
           })
-          .then((happyHourData) => setHappyHour(happyHourData))
-          .then(() => setIsLoading(false))
-      })
+            .then((happyHourData) => setHappyHour(happyHourData))
+            .then(() => setIsLoading(false))
+        })
     })()
   }, [credentials])
 
@@ -43,7 +43,7 @@ export const HappyHour = (): JSX.Element => {
   const postTableCell = ({ item }: {item: Post}) => <TableCell item={item} nav={ route } />
 
   return (
-      isLoading
+    isLoading
       ? <LoadingScreen/>
       : <ScreenContainer>
         <TableView

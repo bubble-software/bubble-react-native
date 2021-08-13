@@ -5,13 +5,12 @@ import { CreateEmail } from '../../screens/Register/CreateEmail'
 import { CreatePassword } from '../../screens/Register/CreatePassword'
 import { CreateUsername } from '../../screens/Register/CreateUsername'
 import { StartRegistration } from '../../screens/Register/StartRegistration'
-import {Text} from 'react-native'
 import { Title } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 
 export const RegistrationStack = (): JSX.Element => {
   const RegistrationStack = createStackNavigator()
-	const navigation = useNavigation()
+  const navigation = useNavigation()
   return (
 		<RegistrationStack.Navigator
 			initialRouteName={'Start Registration'}
@@ -20,84 +19,84 @@ export const RegistrationStack = (): JSX.Element => {
 				name="Start Registration"
 				component={StartRegistration}
 				options={{
-					headerRight:() => <Title 
-						style={{fontSize: 16, marginRight: 12}} 
+				  headerRight: () => <Title
+						style={{ fontSize: 16, marginRight: 12 }}
 						onPress={() => navigation.goBack()}
 					>
 						Cancel
-					</Title>
+					</Title>,
 				}}
 			/>
 			<RegistrationStack.Screen
 				name="Complete Registration"
 				component={CompleteRegistration}
 				options={{
-					headerRight:() => <Title 
-						style={{fontSize: 16, marginRight: 12}} 
+				  headerRight: () => <Title
+						style={{ fontSize: 16, marginRight: 12 }}
 						onPress={() => navigation.navigate('Login')}
 					>
 						Cancel
 					</Title>,
-					headerLeft:() => <Title 
-						style={{fontSize: 16, marginLeft: 12}} 
+				  headerLeft: () => <Title
+						style={{ fontSize: 16, marginLeft: 12 }}
 						onPress={() => navigation.navigate('Create Password')}
 					>
 						Back
-					</Title>
+					</Title>,
 				}}
 			/>
 			<RegistrationStack.Screen
 				name="Create Email"
 				component={CreateEmail}
 				options={{
-					headerRight:() => <Title 
-						style={{fontSize: 16, marginRight: 12}} 
+				  headerRight: () => <Title
+						style={{ fontSize: 16, marginRight: 12 }}
 						onPress={() => navigation.navigate('Login')}
 					>
 						Cancel
 					</Title>,
-					headerLeft:() => <Title 
-						style={{fontSize: 16, marginLeft: 12}} 
+				  headerLeft: () => <Title
+						style={{ fontSize: 16, marginLeft: 12 }}
 						onPress={() => navigation.navigate('Create Username')}
 					>
 						Back
-					</Title>
+					</Title>,
 				}}
 			/>
 			<RegistrationStack.Screen
 				name="Create Password"
 				component={CreatePassword}
 				options={{
-					headerRight:() => <Title 
-						style={{fontSize: 16, marginRight: 12}} 
+				  headerRight: () => <Title
+						style={{ fontSize: 16, marginRight: 12 }}
 						onPress={() => navigation.navigate('Login')}
 					>
 						Cancel
 					</Title>,
-					headerLeft:() => <Title 
-						style={{fontSize: 16, marginLeft: 12}} 
+				  headerLeft: () => <Title
+						style={{ fontSize: 16, marginLeft: 12 }}
 						onPress={() => navigation.navigate('Create Email')}
 					>
 						Back
-					</Title>
+					</Title>,
 				}}
 			/>
 			<RegistrationStack.Screen
 				name="Create Username"
 				component={CreateUsername}
 				options={{
-					headerRight:() => <Title 
-						style={{fontSize: 16, marginRight: 12}} 
+				  headerRight: () => <Title
+						style={{ fontSize: 16, marginRight: 12 }}
 						onPress={() => navigation.navigate('Login')}
 					>
 						Cancel
 					</Title>,
-					headerLeft:() => <Title 
-						style={{fontSize: 16, marginLeft: 12}} 
+				  headerLeft: () => <Title
+						style={{ fontSize: 16, marginLeft: 12 }}
 						onPress={() => navigation.navigate('Start Registration')}
 					>
 						Back
-					</Title>
+					</Title>,
 				}}
 			/>
 		</RegistrationStack.Navigator>

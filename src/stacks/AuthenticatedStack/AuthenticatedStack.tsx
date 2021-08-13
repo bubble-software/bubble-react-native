@@ -19,23 +19,23 @@ import { LocationObject } from 'expo-location'
 import * as Location from 'expo-location'
 
 /*
-	get location here and it will be accessable throughout the authenticated stack 
+	get location here and it will be accessable throughout the authenticated stack
 */
 export const AuthenticatedStack = (): JSX.Element => {
   const ForgotPasswordStack = createStackNavigator()
   const [currTab, setCurrTab] = useState('Happy Hour')
   const [drawerActive, setDrawerActive] = useState(false)
-	const [location, setLocation] = useState({} as LocationObject)
+  const [location, setLocation] = useState({} as LocationObject)
   const navigation = useNavigation()
 
-	useEffect(() => {
-		Location.getLastKnownPositionAsync()
-		.then((locationObj) => {
-			if(locationObj !== null){
-				setLocation(locationObj)
-			}
-		})
-	}, [])
+  useEffect(() => {
+    Location.getLastKnownPositionAsync()
+      .then((locationObj) => {
+        if (locationObj !== null) {
+          setLocation(locationObj)
+        }
+      })
+  }, [])
 
   return (
 		<TabContext.Provider value={{
@@ -43,12 +43,12 @@ export const AuthenticatedStack = (): JSX.Element => {
 		  setCurrTab,
 		  drawerActive,
 		  setDrawerActive,
-			location,
-			setLocation
+		  location,
+		  setLocation,
 		}}>
 			<ForgotPasswordStack.Navigator
 				initialRouteName={'Authenticated'}
-				screenOptions={{headerTitleAlign: 'center'}}
+				screenOptions={{ headerTitleAlign: 'center' }}
 			>
 				<ForgotPasswordStack.Screen
 					name="Authenticated"
@@ -73,8 +73,8 @@ export const AuthenticatedStack = (): JSX.Element => {
 					options={{
 					  title: 'Liked Post',
 					  headerLeft: () => <Entypo name="chevron-left" size={24} color="white" onPress={() => RootNavigation('Authenticated')} />,
-						headerTitleStyle:{}
-						
+					  headerTitleStyle: {},
+
 					}}
 				/>
 				<ForgotPasswordStack.Screen

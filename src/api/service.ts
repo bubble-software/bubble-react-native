@@ -120,7 +120,7 @@ export const submitVote = async (voteParams: VOTE_PARAMS, token: string): Promis
       post_id: voteParams.postId,
       direction: voteParams.direction,
       is_voted: voteParams.isVoted,
-      comment_id: voteParams.commentId
+      comment_id: voteParams.commentId,
     },
   })
   if (response.status === 200) {
@@ -260,7 +260,7 @@ export const validatePasswordRecoveryCode = async (email: string, code: string):
 }
 
 export const validatePasswordReset = async (validatePasswordParams: VALIDATE_PASSWORD_PARAMS): Promise<void> => {
-  console.log(VALIDATE_PASSWORD_RESET_URL,validatePasswordParams )
+  console.log(VALIDATE_PASSWORD_RESET_URL, validatePasswordParams)
   await axios({
     method: 'POST',
     url: VALIDATE_PASSWORD_RESET_URL,

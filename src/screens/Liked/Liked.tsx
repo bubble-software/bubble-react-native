@@ -17,8 +17,8 @@ export const Liked = (): JSX.Element => {
   useEffect(() => {
     (async () => {
       getUserLikedPosts(credentials!)
-      .then((likedPostsData) => setLikedPosts(likedPostsData))
-      .then(() => setIsLoading(false))
+        .then((likedPostsData) => setLikedPosts(likedPostsData))
+        .then(() => setIsLoading(false))
     })()
   }, [credentials])
 

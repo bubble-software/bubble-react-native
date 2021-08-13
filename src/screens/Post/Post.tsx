@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { FlatList, KeyboardAvoidingView, TextInput, View, Text, Keyboard,Platform } from 'react-native'
+import { FlatList, KeyboardAvoidingView, TextInput, View, Text, Keyboard, Platform } from 'react-native'
 import { Card, Title, Paragraph, Menu, Divider } from 'react-native-paper'
 import { blockUser, getComments, postComment } from '../../api/service'
 import { Vote } from '../../components/Vote/Vote'
@@ -15,7 +15,6 @@ import { ScreenContainer } from '../../components/ScreenContainer/ScreenContaine
 import { Comment } from '../../api/types'
 import { UserContext } from '../../providers/UserProvider/UserProvider'
 export const Post = ({ route }: {route: PostRouteProps}): JSX.Element => {
-
   const { credentials } = useContext(AuthContext)
   const { me } = useContext(UserContext)
 
@@ -84,38 +83,38 @@ title={<Text style={{ color: 'black', fontSize: 18 }}>Block User</Text>}
 
   const postCommentAction = () => {
     postComment({ token: credentials!, content: text, postId: id.toString() })
-    .then(() => {
-      const currComment: Comment = {
-        content: text,
-        dateCreated: new Date(),
-        username: me!.username,
-        isVoted: false,
-        id: Math.random(),
-        userId: me!.userId,
-        votes: 0,
-        prevVote: 0
-      }
-      setComments((prevComments) => [...prevComments, currComment ])
-    })
-    .then(() => setText(''))
+      .then(() => {
+        const currComment: Comment = {
+          content: text,
+          dateCreated: new Date(),
+          username: me!.username,
+          isVoted: false,
+          id: Math.random(),
+          userId: me!.userId,
+          votes: 0,
+          prevVote: 0,
+        }
+        setComments((prevComments) => [...prevComments, currComment])
+      })
+      .then(() => setText(''))
   }
   return (
   <ScreenContainer>
   <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={100}
-      style={{flex:1}}
+      style={{ flex: 1 }}
   >
     <View style={styles.container}>
       <Card style={styles.cardContainer}>
         <Card.Content style={styles.cardContent}>
-          <View style={{flexDirection:'column', alignItems:'center', width: '100%'}}>
+          <View style={{ flexDirection: 'column', alignItems: 'center', width: '100%' }}>
             <Title style={styles.cardTitle}>{ title }</Title>
             <View style={styles.cardBody}>
               <Paragraph style={styles.postText}>{content}</Paragraph>
             </View>
           </View>
-          <View style={{position:'absolute', right: 0}}>
+          <View style={{ position: 'absolute', right: 0 }}>
           <Vote
             votes={votes}
             postId={id}
@@ -140,10 +139,10 @@ title={<Text style={{ color: 'black', fontSize: 18 }}>Block User</Text>}
 </View>
 </View>
 <Divider style={{ marginVertical: 10 }}/>
-<FlatList 
-  data={comments} 
-  renderItem={renderItem} 
-  keyExtractor={(item) => item.id}   
+<FlatList
+  data={comments}
+  renderItem={renderItem}
+  keyExtractor={(item) => item.id}
   onStartShouldSetResponder={() => true}
 />
 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: LIGHTBLUE, paddingBottom: 10 }}>

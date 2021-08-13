@@ -25,13 +25,13 @@ export const ForgotPassword = (): JSX.Element => {
   }
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 			<View style={{ flex: 1, marginHorizontal: '8%', marginTop: '24%' }}>
-				<Title style={{fontSize: 18}}>We&apos;ll send you a code that confirms the account is yours.</Title>
+				<Title style={{ fontSize: 18 }}>We&apos;ll send you a code that confirms the account is yours.</Title>
 				<TextInput
 					placeholder="email"
 					onChangeText={(usernameText) => setEmail(usernameText)}

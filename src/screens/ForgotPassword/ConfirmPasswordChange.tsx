@@ -7,25 +7,25 @@ import { validatePasswordReset } from '../../api/service'
 import { ScreenContainer } from '../../components/ScreenContainer/ScreenContainer'
 import { styles } from './styles'
 
-export const ConfirmPasswordChange = ({route}): JSX.Element => {
+export const ConfirmPasswordChange = ({ route }): JSX.Element => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
-  const { data, code, } = route.params
-	const navigation = useNavigation()
+  const { data, code } = route.params
+  const navigation = useNavigation()
   const validateCode = () => {
-		if(password === confirmPassword){
-			validatePasswordReset({ email: data, recoveryCode: code, password: password })
-				.then(() => {
-					Alert.alert('Succesfully Changed Password')
-					navigation.navigate('Login')
-				})
-		}
+    if (password === confirmPassword) {
+      validatePasswordReset({ email: data, recoveryCode: code, password: password })
+        .then(() => {
+          Alert.alert('Succesfully Changed Password')
+          navigation.navigate('Login')
+        })
+    }
   }
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>

@@ -26,8 +26,8 @@ export const PasswordValidation = ({ route }: {route: PasswordValidationRoutePro
   }
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>

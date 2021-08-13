@@ -57,6 +57,10 @@ export const VALIDATE_PASSWORD_RESET_URL = `${BASE_URL}/validate_password_reset`
 export const SET_DEFAULT_CATEGORY = `${BASE_URL}/set_default_category`
 export const UPDATE_USER = `${BASE_URL}/user_update_setting`
 export const SUBMIT_CONTENT_REVIEW = `${BASE_URL}/content_review`
+
+/*
+MARK: THEMES
+*/
 export const LIGHTERBLUE = 'rgb(162, 229, 252)'
 export const LIGHTBLUE = 'rgba(112, 202, 211, 1)'
 export const DARKBLUE = 'rgb(65,160,177)'

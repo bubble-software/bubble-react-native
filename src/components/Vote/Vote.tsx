@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useEffect } from 'react'
+
 import { Dimensions, View, Text } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { submitVote } from '../../api/service'
@@ -13,8 +13,9 @@ export const Vote: TemplateType = ({
   isVoted,
   postId,
   type = 'post',
-  commentId
+  commentId,
 }): JSX.Element => {
+
   const [voteCount, setVoteCount] = useState(votes)
   const [prevVoteState, setPrevVoteState] = useState(prevVote)
   const DeviceWidth = Dimensions.get('window').width
@@ -47,7 +48,7 @@ export const Vote: TemplateType = ({
         setVoteCount(voteCount + 1)
         setPrevVoteState(() => {
           dir = 1
-          submitVote({ direction: dir, postId,commentId, isVoted, voteType: type }, credentials!)
+          submitVote({ direction: dir, postId, commentId, isVoted, voteType: type }, credentials!)
           return dir
         })
       }
@@ -56,7 +57,7 @@ export const Vote: TemplateType = ({
         setVoteCount(voteCount + 1)
         setPrevVoteState(() => {
           dir = 0
-          submitVote({ direction: dir, postId, commentId, isVoted, voteType: type  }, credentials!)
+          submitVote({ direction: dir, postId, commentId, isVoted, voteType: type }, credentials!)
           return dir
         })
       } else {
@@ -73,16 +74,16 @@ export const Vote: TemplateType = ({
   const viewWidth = flexDirection === 'row' ? undefined : DeviceWidth * 0.1
   return (
 		<View style={{ width: viewWidth, marginBottom: 1, alignItems: 'center', flexDirection: flexDirection }}>
-			<Ionicons 
-        name={voteColor(true) === 'green' ? 'triangle' : 'triangle-outline'} 
-        size={18} color={voteColor(true)} 
+			<Ionicons
+        name={voteColor(true) === 'green' ? 'triangle' : 'triangle-outline'}
+        size={18} color={voteColor(true)}
         onPress= {() => voteHandler(true)}
       />
-			<Text style={{marginHorizontal: marginHorizontal}}>{voteCount}</Text>
-			<Ionicons 
-        name={voteColor(false) === 'red' ? 'triangle' : 'triangle-outline'} 
-        style={{transform: [{rotate: '180deg'}]}} 
-        size={18} color={voteColor(false)} 
+			<Text style={{ marginHorizontal: marginHorizontal }}>{voteCount}</Text>
+			<Ionicons
+        name={voteColor(false) === 'red' ? 'triangle' : 'triangle-outline'}
+        style={{ transform: [{ rotate: '180deg' }] }}
+        size={18} color={voteColor(false)}
         onPress= {() => voteHandler(false)}
       />
 		</View>

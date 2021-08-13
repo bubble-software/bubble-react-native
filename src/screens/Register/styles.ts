@@ -21,14 +21,14 @@ export const styles = StyleSheet.create({
     color: 'white',
     width: '100%',
     alignSelf: 'center',
-    marginVertical: '2%'
+    marginVertical: '2%',
   },
   confirmPasswordTextInput: {
     backgroundColor: 'transparent',
     color: 'white',
     width: '100%',
     alignSelf: 'center',
-    marginBottom: '10%'
+    marginBottom: '10%',
   },
   continueButton: {
     marginTop: '2%',
@@ -37,10 +37,10 @@ export const styles = StyleSheet.create({
     height: 65,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginBottom: '10%'
+    marginBottom: '10%',
   },
   completeRegistrationSubHeader: {
-    marginVertical: '10%'
+    marginVertical: '10%',
   },
   buttonText: {
     color: BUBBLEBLUE,
@@ -53,10 +53,10 @@ export const styles = StyleSheet.create({
     height: 65,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginBottom: '10%'
+    marginBottom: '10%',
   },
-  tos:{
+  tos: {
     color: DARKBLUE,
-    fontWeight:'600'
-  }
+    fontWeight: '600',
+  },
 })

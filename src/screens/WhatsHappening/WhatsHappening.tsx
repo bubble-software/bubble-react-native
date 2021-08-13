@@ -25,10 +25,10 @@ export const WhatsHappening = (): JSX.Element => {
       const latitude = coords.latitude
       getRadius({ longitude, latitude })
         .then((resp) => {
-        getCategoryPosts({ token: credentials, longitude, latitude, radius: resp.radius, category: 'Whats Happening' })
-          .then((whatsHappeningData) => setWhatsHappening(whatsHappeningData))
-          .then(() => setIsLoading(false))
-      })
+          getCategoryPosts({ token: credentials, longitude, latitude, radius: resp.radius, category: 'Whats Happening' })
+            .then((whatsHappeningData) => setWhatsHappening(whatsHappeningData))
+            .then(() => setIsLoading(false))
+        })
     })()
   }, [credentials])
 

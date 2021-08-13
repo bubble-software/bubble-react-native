@@ -36,9 +36,9 @@ export const HeaderTitle = (): JSX.Element => {
   }
 
   return (
-		<View style={{ flexDirection: 'row', alignItems:'center' }}>
+		<View style={{ flexDirection: 'row', alignItems: 'center' }}>
 			{icon}
-			<Text style={{color: 'white', fontFamily:'freehand', fontSize: 40}}>{currTab}</Text>
+			<Text style={{ color: 'white', fontFamily: 'freehand', fontSize: 40 }}>{currTab}</Text>
 			{icon}
 		</View>
   )

@@ -13,7 +13,6 @@ import RecFilled from '../../../assets/icons/recFilled.svg'
 import { styles } from './styles'
 import { ScreenContainer } from '../../components/ScreenContainer/ScreenContainer'
 
-
 export const CreatePost = (): JSX.Element => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
@@ -60,9 +59,9 @@ export const CreatePost = (): JSX.Element => {
     <ScreenContainer>
 
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={100}
-      style={{flex:1}}
+      style={{ flex: 1 }}
     >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
   <View>

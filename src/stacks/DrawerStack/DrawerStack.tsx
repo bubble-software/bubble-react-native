@@ -1,6 +1,6 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
 import { useNavigation } from '@react-navigation/native'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { TabStack } from '../TabStack/TabStack'
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider'
 import { Icon } from '../../components/SVG/Icon/Icon'
@@ -8,20 +8,20 @@ import { DARKBLUE } from '../../utils/constants'
 import { Divider, Title } from 'react-native-paper'
 import { View } from 'react-native'
 import { TabContext } from '../../providers/TabProvider/TabProvider'
-import { useEffect } from 'react'
+
 import * as Location from 'expo-location'
 function CustomDrawerContent (props: DrawerContentComponentProps<DrawerContentOptions>): JSX.Element {
   // @ts-ignore
   const { signOut } = useContext(AuthContext)
   const navigation = useNavigation()
-	const {location} = useContext(TabContext)
-	const [city, setCity] = useState<string>('')
-	const {longitude, latitude} = location?.coords ?? {}
+  const { location } = useContext(TabContext)
+  const [city, setCity] = useState<string>('')
+  const { longitude, latitude } = location?.coords ?? {}
 
-	useEffect(() => {
-		Location.reverseGeocodeAsync({longitude, latitude})
-			.then((resp) => resp[0].city !== null && setCity(resp[0].city))
-	},[location])
+  useEffect(() => {
+    Location.reverseGeocodeAsync({ longitude, latitude })
+      .then((resp) => resp[0].city !== null && setCity(resp[0].city))
+  }, [location])
 
   return (
 		<DrawerContentScrollView {...props} contentContainerStyle={{ justifyContent: 'space-evenly' }}>
@@ -53,9 +53,9 @@ function CustomDrawerContent (props: DrawerContentComponentProps<DrawerContentOp
 
 				/>
 			</View>
-			<View style={{flexDirection:'column', alignItems:'center'}}>
+			<View style={{ flexDirection: 'column', alignItems: 'center' }}>
 				<Icon name='menuBLogo' color={DARKBLUE} size={150} style={{ alignSelf: 'center', marginTop: '25%' }}/>
-				<Title style={{color: DARKBLUE, marginTop: '15%'}}>{city}</Title>
+				<Title style={{ color: DARKBLUE, marginTop: '15%' }}>{city}</Title>
 			</View>
 		</DrawerContentScrollView>
   )

@@ -25,11 +25,11 @@ export const Recreation = (): JSX.Element => {
       const longitude = coords.longitude
       const latitude = coords.latitude
       getRadius({ longitude, latitude })
-      .then((resp) => {
-        getCategoryPosts({ token: credentials, longitude, radius: resp.radius, latitude, category: 'Recreation' })
-        .then((recreationData) => setRecreation(recreationData))
-        .then(() => setIsLoading(false))
-      })
+        .then((resp) => {
+          getCategoryPosts({ token: credentials, longitude, radius: resp.radius, latitude, category: 'Recreation' })
+            .then((recreationData) => setRecreation(recreationData))
+            .then(() => setIsLoading(false))
+        })
     })()
   }, [credentials])
 
@@ -38,8 +38,8 @@ export const Recreation = (): JSX.Element => {
 
   return (
     isLoading
-    ? <LoadingScreen/>
-		: <ScreenContainer>
+      ? <LoadingScreen/>
+      : <ScreenContainer>
         <TableView
           data={recreation}
           tableCellRenderer={postTableCell}

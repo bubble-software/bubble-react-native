@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   cardContent: {
     alignItems: 'center',
-    flexDirection:'row'
+    flexDirection: 'row',
   },
   cardTitle: {
     color: DARKBLUE,

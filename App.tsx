@@ -11,8 +11,8 @@ export default function App (): JSX.Element {
 
   useEffect(() => {
     Location.requestForegroundPermissionsAsync()
-      .then(({status}) =>{
-        if (status !== 'granted'){
+      .then(({ status }) => {
+        if (status !== 'granted') {
           return undefined
         }
       })
@@ -38,6 +38,6 @@ const theme: Theme = {
     ...DefaultTheme.colors,
     text: 'white',
     placeholder: 'white',
-    primary: 'white'
-  }
+    primary: 'white',
+  },
 }

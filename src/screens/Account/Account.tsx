@@ -24,7 +24,7 @@ export const Account = (): JSX.Element => {
       await getUserPosts(credentials!).then((userPostData) => {
         setUserPosts(userPostData)
       })
-			.then(() => setIsLoading(false))
+        .then(() => setIsLoading(false))
     })()
   }, [credentials])
 
@@ -32,9 +32,9 @@ export const Account = (): JSX.Element => {
   const postTableCell = ({ item }: {item: Post}) => <TableCell item={item} nav={route} />
 
   return (
-		isLoading
-		? <LoadingScreen/>
-		: <ScreenContainer>
+    isLoading
+      ? <LoadingScreen/>
+      : <ScreenContainer>
 			<Text style={styles.accountNameText}>
 				{me?.username}
 			</Text>

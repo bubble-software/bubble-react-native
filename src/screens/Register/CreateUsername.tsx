@@ -28,13 +28,13 @@ export const CreateUsername = (): JSX.Element => {
 
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-			<View style={{ flex: 1, marginHorizontal: '8%', alignContent: 'center', alignItems: 'center', }}>
-				<Title style={{ marginTop: '50%'}}>Enter in your username</Title>
+			<View style={{ flex: 1, marginHorizontal: '8%', alignContent: 'center', alignItems: 'center' }}>
+				<Title style={{ marginTop: '50%' }}>Enter in your username</Title>
 				<TextInput
 					placeholder="username"
 					onChangeText={(usernameText) => setUsername(usernameText)}
@@ -48,7 +48,7 @@ export const CreateUsername = (): JSX.Element => {
 					mode="contained"
 					style={styles.continueButton}
 					onPress={() => {
-						checkUsernameAction()
+					  checkUsernameAction()
 					}}
 				>
           Continue

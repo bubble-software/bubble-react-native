@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     color: 'white',
     width: '100%',
     alignSelf: 'center',
-    marginVertical: '10%'
+    marginVertical: '10%',
   },
   passwordTextInput: {
     backgroundColor: 'transparent',

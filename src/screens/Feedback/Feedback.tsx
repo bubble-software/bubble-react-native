@@ -36,8 +36,8 @@ export const Feedback = (): JSX.Element => {
 
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>

@@ -46,10 +46,10 @@ export const AccountSettings = (): JSX.Element => {
     unblockUser(credentials!, unblockParams)
       .then(() => {
         setBlockedUsers((prevArr) => (
-          filter(prevArr, (blockedUser) => blockedUser.blockedUserId !== unblockParams )
+          filter(prevArr, (blockedUser) => blockedUser.blockedUserId !== unblockParams)
         ))
       })
-    }
+  }
   // const blockUserAction = (unblockParams: UNBLOCK_PARAMS) => {
   //   blockUser(credentials!, unblockParams)
   // }
@@ -58,8 +58,8 @@ export const AccountSettings = (): JSX.Element => {
     return (
 			<View style={styles.postTableCell}>
 			<Title style={{ color: DARKBLUE }}>{item.blockedUsername}</Title>
-      <TouchableOpacity onPress={ ()=> unblockUserAction(item.blockedUserId)}>
-        <FontAwesome5 name="trash-alt" size={24} color="#ff6961"/>        
+      <TouchableOpacity onPress={ () => unblockUserAction(item.blockedUserId)}>
+        <FontAwesome5 name="trash-alt" size={24} color="#ff6961"/>
       </TouchableOpacity>
 			</View>
     )

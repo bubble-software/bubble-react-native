@@ -6,15 +6,15 @@ import { Button, Subheading, TextInput, Title } from 'react-native-paper'
 import { ScreenContainer } from '../../components/ScreenContainer/ScreenContainer'
 import { styles } from './styles'
 
-export const CreatePassword = ({route}): JSX.Element => {
+export const CreatePassword = ({ route }): JSX.Element => {
   const navigation = useNavigation()
   const [password, setPassword] = useState('')
-	const [confirmPassword, setConfirmPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const { username, email } = route.params
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -45,7 +45,7 @@ export const CreatePassword = ({route}): JSX.Element => {
 				<Button
 					mode="contained"
 					style={styles.continueButton}
-					onPress={() => navigation.navigate('Complete Registration', {email, username,  password})}
+					onPress={() => navigation.navigate('Complete Registration', { email, username, password })}
 				>
           Continue
 				</Button>

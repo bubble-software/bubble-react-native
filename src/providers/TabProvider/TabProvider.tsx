@@ -16,6 +16,6 @@ const tabContext: TabContextType = {
   drawerActive: false,
   setDrawerActive: () => {},
   location: {} as LocationObject,
-  setLocation: () => {}
+  setLocation: () => {},
 }
 export const TabContext = createContext<TabContextType>(tabContext)

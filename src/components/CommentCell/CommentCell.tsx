@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { View, Text } from 'react-native'
-import { Divider, List, Menu, Paragraph, Title } from 'react-native-paper'
+import { Divider, List, Menu, Paragraph } from 'react-native-paper'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { prettyCurrentDatePlusYears } from '../../utils/stringhelpers'
 
@@ -18,7 +18,7 @@ export const CommentCell: TemplateType = ({ comment }): JSX.Element => {
   const [commentMenuvisible, setCommentMenuVisible] = React.useState(false)
 
   const closeCommentMenu = () => setCommentMenuVisible(false)
-  const { id, userId } = comment
+  const { userId } = comment
 
   const blockUserAction = async () => {
     await blockUser(credentials!, userId.toString())

@@ -27,7 +27,7 @@ export const Misc = (): JSX.Element => {
         .then((resp) => {
           getCategoryPosts({ token: credentials, longitude, latitude, radius: resp.radius, category: 'Misc' }).then((miscData) => setMisc(miscData))
         })
-        .then(()=> setIsLoading(false))
+        .then(() => setIsLoading(false))
     })()
   }, [credentials])
 
@@ -36,13 +36,13 @@ export const Misc = (): JSX.Element => {
 
   return (
     isLoading
-    ? <LoadingScreen/>
-    : <ScreenContainer>
+      ? <LoadingScreen/>
+      : <ScreenContainer>
       <TableView
         data={misc}
         tableCellRenderer={postTableCell}
         scrollEnabled={false}
       />
   </ScreenContainer>
-)
+  )
 }

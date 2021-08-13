@@ -6,15 +6,15 @@ import { Button, Subheading, TextInput, Title } from 'react-native-paper'
 import { checkEmail } from '../../api/service'
 import { ScreenContainer } from '../../components/ScreenContainer/ScreenContainer'
 import { styles } from './styles'
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'
 
-export const CreateEmail = ({route}): JSX.Element => {
+export const CreateEmail = ({ route }): JSX.Element => {
   const navigation = useNavigation()
   const [email, setEmail] = useState('')
   const { username } = route.params
   const checkEmailAction = () => {
     checkEmail(email)
-      .then(() => navigation.navigate('Create Password', {username, email}))
+      .then(() => navigation.navigate('Create Password', { username, email }))
       .catch((e) => {
         Alert.alert(
 					`${e}`,
@@ -28,8 +28,8 @@ export const CreateEmail = ({route}): JSX.Element => {
 
   return (
 		<KeyboardAvoidingView
-		behavior={Platform.OS === "ios" ? "padding" : "height"}
-		style={{flex:1}}
+		behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+		style={{ flex: 1 }}
 	>
 		<ScreenContainer>
 		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
